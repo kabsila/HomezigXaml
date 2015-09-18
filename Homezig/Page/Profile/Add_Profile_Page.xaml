@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="Homezig.Add_Profile_Page"
+			Title="Creat Profile">
+
+	<ContentPage.Padding>
+	    <OnPlatform x:TypeArguments="Thickness"
+	                iOS="20, 20, 20, 20"
+	                Android="20, 0, 20, 20"
+	                WinPhone="20, 0, 20, 20" />
+  	</ContentPage.Padding>
+
+  		<StackLayout VerticalOptions="Center" Spacing="10">		
+
+  			<Label Text="Profile Name" />
+  			<Entry x:Name="nameEntry" Placeholder="Type name of profile" />			
+
+			<ListView x:Name="deviceListview" ItemsSource="{Binding .}">
+				
+				    <ListView.ItemTemplate>
+				      <DataTemplate>
+				        <ViewCell>				        	
+
+                        	<StackLayout Padding="0, 0, 0, 0" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                            	<Label Text="{Binding node_name_by_user}" 
+                            			HorizontalOptions="StartAndExpand" 
+                            			VerticalOptions="CenterAndExpand"/>
+
+                            	<Switch Toggled="switch_Toggled" VerticalOptions="CenterAndExpand" />
+	                        </StackLayout>
+
+                    	</ViewCell>
+				      </DataTemplate>
+				    </ListView.ItemTemplate>
+			  
+  			</ListView>
+  			<StackLayout Padding="0, 0, 0, 0" Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+  				<Button Clicked="OnCreateProfile" Text="  Create  " BorderWidth="1" />
+  				<Button Clicked="OnCancel" Text="  Cancel  " BorderWidth="1" />
+  			</StackLayout>
+			
+		</StackLayout>
+	<ContentPage.Content>
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="Homezig.Profile_Page"
+			xmlns:local="clr-namespace:Homezig;assembly=Homezig"
+			Title="Profile">
+
+	<ContentPage.Padding>
+	    <OnPlatform x:TypeArguments="Thickness"
+	                iOS="20, 20, 20, 20"
+	                Android="20, 0, 20, 20"
+	                WinPhone="20, 0, 20, 20" />
+  	</ContentPage.Padding>
+
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="Center" Spacing="20">		
+
+
+			<Button Clicked="onclick" Text="Create Proflle" />
+
+			<ListView x:Name="ProfileListview" ItemsSource="{Binding .}" ItemTapped="onItemTapped" >
+				
+				    <ListView.ItemTemplate>
+				      <DataTemplate>
+				        <ViewCell>
+				        	<ViewCell.ContextActions>
+					            <MenuItem Clicked="OnEdit" CommandParameter="{Binding .}" Text="Edit" />
+					            <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" />
+					        </ViewCell.ContextActions>
+
+                        	<StackLayout Padding="25, 0, 20, 0" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                            	<Label Text="{Binding profileName}" 
+                            			HorizontalOptions="StartAndExpand" 
+                            			VerticalOptions="CenterAndExpand"/>
+                            	<Switch x:Name="sw"  
+                            			BindingContextChanged="bc"                          			
+                            			VerticalOptions="CenterAndExpand" 
+                            			PropertyChanging="pc" 
+
+                            			Toggled="OnProfile_Toggled"
+                            			IsToggled="{Binding profile_status}" 
+                            			/>
+	                        </StackLayout>
+
+                    	</ViewCell>
+				      </DataTemplate>
+				    </ListView.ItemTemplate>
+			  
+  			</ListView>
+
+			
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

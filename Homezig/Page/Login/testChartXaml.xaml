@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;;assembly=Syncfusion.SfChart.XForms;"
+			x:Class="Homezig.testChartXaml">
+
+	<ContentPage.Padding>
+	    <OnPlatform x:TypeArguments="Thickness"
+	                iOS="0, 20, 0, 20"
+	                Android="10, 0, 10, 20"
+	                WinPhone="10, 0, 10, 20" />
+  	</ContentPage.Padding>
+  		
+	
+		
+
+	<chart:SfChart x:Name="chart">
+
+	<chart:SfChart.Legend>
+      	<chart:ChartLegend/>
+     </chart:SfChart.Legend>
+
+	<chart:SfChart.Title>
+      <chart:ChartTitle Text="Weather Analysis"/>
+    </chart:SfChart.Title>
+
+     <chart:SfChart.PrimaryAxis>
+       <chart:CategoryAxis>        
+        <chart:CategoryAxis.Title>
+           <chart:ChartAxisTitle Text="Month"/>
+         </chart:CategoryAxis.Title>
+       </chart:CategoryAxis>
+     </chart:SfChart.PrimaryAxis>
+
+     <chart:SfChart.SecondaryAxis>
+         <chart:NumericalAxis>
+          <chart:NumericalAxis.Title>
+           <chart:ChartAxisTitle Text="Temperature"/>
+           </chart:NumericalAxis.Title>
+         </chart:NumericalAxis>
+     </chart:SfChart.SecondaryAxis>
+
+	<chart:SfChart.Series>
+		<chart:ColumnSeries x:Name="cs" 
+							Label="Precipitation" 
+							ItemsSource="{Binding .}" 
+							EnableDataPointSelection = "True"  
+                            SelectedDataPointColor = "#B399E6">
+	        <chart:ColumnSeries.YAxis>
+	          	<chart:NumericalAxis OpposedPosition="true" ShowMajorGridLines="false"/>
+	        </chart:ColumnSeries.YAxis>
+      	</chart:ColumnSeries>
+		<chart:SplineSeries x:Name="SplineSeriesH" Label="High" ItemsSource="{Binding .}"/>
+		<chart:SplineSeries x:Name="SplineSeriesL" Label="Low" ItemsSource="{Binding .}"/>
+	</chart:SfChart.Series>
+
+  
+     </chart:SfChart>
+
+  
+	
+	
+
+</ContentPage>

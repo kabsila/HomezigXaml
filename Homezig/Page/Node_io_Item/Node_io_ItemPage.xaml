@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="Homezig.Node_io_ItemPage"
+			xmlns:local="clr-namespace:Homezig;assembly=Homezig"
+			Title="">
+
+	<ContentPage.Padding>
+	    <OnPlatform x:TypeArguments="Thickness"
+	                iOS="20, 20, 20, 20"
+	                Android="20, 0, 20, 20"
+	                WinPhone="20, 0, 20, 20" />
+  	</ContentPage.Padding>
+
+  	<!---<ContentPage.BindingContext>
+    	<local:Node_io_item_viewModel />
+  	</ContentPage.BindingContext>-->
+
+	<ContentPage.Content>
+
+		<StackLayout VerticalOptions="Center" Spacing="20">
+
+			<Label Text="{Binding name_by_user}" 
+					FontAttributes="Bold" 
+					FontSize="Large"
+					HorizontalOptions="CenterAndExpand"
+					VerticalOptions="CenterAndExpand" />
+
+					<Button Clicked="onclick" Text="test click" />
+			<ListView  x:Name="ioListView" ItemsSource="{Binding ListviewItem}">
+				
+				    <ListView.ItemTemplate>
+				      <DataTemplate>
+				       <ViewCell>
+
+				        	<ViewCell.ContextActions>
+					            <MenuItem Clicked="OnEdit" CommandParameter="{Binding .}" Text="Edit" />
+					        </ViewCell.ContextActions>
+					   
+                        	<StackLayout Padding="25, 0, 20, 0" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                            	<Label Text="{Binding io_name_by_user}" 
+                            			HorizontalOptions="StartAndExpand" 
+                            			VerticalOptions="CenterAndExpand"/>
+                            	<Switch x:Name="chkInfo" Toggled="onToggled" IsToggled="{Binding io_value}" VerticalOptions="CenterAndExpand" />
+                            
+                           
+	                        </StackLayout> 
+	                     </ViewCell>     
+				      </DataTemplate>
+				    </ListView.ItemTemplate>
+			  
+  			</ListView>
+
+			
+		</StackLayout>
+
+	</ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="Homezig.Add_Remote_Button">
+
+	<ContentPage.Padding>
+	    <OnPlatform x:TypeArguments="Thickness"
+	                iOS="20, 20, 20, 20"
+	                Android="20, 0, 20, 20"
+	                WinPhone="20, 0, 20, 20" />
+  	</ContentPage.Padding>
+
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="Center" Spacing="20">			
+
+			<Label Text="Name" />
+			<Entry x:Name="instructionRemoteName_value" Text="" Placeholder="Type name of remote button (Ex: Volume Up)" />
+			<Button Text="Submit" Clicked="submitRemoteButton_Click" BorderWidth="1"/>
+			<Button Text="Cancel" Clicked="cancelRemoteButton_Click" BorderWidth="1"/>
+
+			
+		</StackLayout>
+	</ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="Homezig.Admin_Add_User_Page"
+			Title="Create Account">
+
+
+	<ContentPage.Padding>
+	    <OnPlatform x:TypeArguments="Thickness"
+	                iOS="20, 20, 20, 20"
+	                Android="20, 0, 20, 20"
+	                WinPhone="20, 0, 20, 20" />
+  	</ContentPage.Padding>
+
+  	<ContentPage.Content>
+
+		<StackLayout Spacing="10">					
+
+			<Label Text="Username"
+					FontSize="Medium"/>
+
+			<Entry x:Name="usernameEntry"				
+					Text=""/>
+
+			<Label Text="Password"
+					FontSize="Medium"/>
+
+			<Entry x:Name="passwordEntry"				
+					Text=""/>
+
+			<Button Text="Create"
+					BorderWidth="1"
+					Clicked="OnCreateUser"/>
+
+			<Button Text="Cancel"
+					BorderWidth="1"
+					Clicked="OnCancel"/>
+
+			
+		</StackLayout>
+
+	</ContentPage.Content>
+
+</ContentPage>

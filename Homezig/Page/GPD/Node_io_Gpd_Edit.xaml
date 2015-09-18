@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="Homezig.Node_io_Gpd_Edit">
+
+	<ContentPage.Padding>
+	    <OnPlatform x:TypeArguments="Thickness"
+	                iOS="20, 20, 10, 20"
+	                Android="20, 0, 10, 20"
+	                WinPhone="20, 0, 10, 20" />
+  	</ContentPage.Padding>
+
+  	<ContentPage.Content>
+
+		<StackLayout Spacing="10">					
+
+			<Label Text="Name"
+					FontSize="Medium"/>
+
+			<Entry x:Name="nameEntry"				
+					Text="{Binding name_by_user}"/>
+
+			<Label Text="Node ID"
+					FontSize="Medium"/>
+
+			<Label Text="{Binding node_addr}"/>
+
+			<Button Text="Save"
+					BorderWidth="1"
+					Clicked="OnSave"/>
+
+			<Button Text="Cancel"
+					BorderWidth="1"
+					Clicked="OnCancel"/>
+
+			
+		</StackLayout>
+
+	</ContentPage.Content>
+
+</ContentPage>

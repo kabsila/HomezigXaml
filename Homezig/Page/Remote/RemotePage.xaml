@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="Homezig.RemotePage"
+			Title="{Binding name_by_user}">
+
+	<ContentPage.Padding>
+	    <OnPlatform x:TypeArguments="Thickness"
+	                iOS="20, 20, 20, 20"
+	                Android="20, 0, 20, 20"
+	                WinPhone="20, 0, 20, 20" />
+  	</ContentPage.Padding>
+
+  		
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="Center" Spacing="10">			
+
+			<Button Clicked="onAddButtonClick" 
+					Text="Add Remote" 
+					BorderWidth="1"/>
+
+			<ListView  x:Name="remoteButtonListName" ItemsSource="{Binding .}" ItemTapped="RemoteControl_Tapped">
+				
+				    <ListView.ItemTemplate>
+				      <DataTemplate>
+				       <ViewCell>
+
+				        	<ViewCell.ContextActions>
+					            <MenuItem Clicked="OnRename" CommandParameter="{Binding .}" Text="Rename" />
+					            <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" />
+					        </ViewCell.ContextActions>
+					   
+                        	<StackLayout Padding="25, 0, 20, 0" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                            	<Label Text="{Binding remote_button_name}" 
+                            			HorizontalOptions="StartAndExpand" 
+                            			VerticalOptions="CenterAndExpand"/>                            	
+                           
+	                        </StackLayout> 
+	                     </ViewCell>     
+				      </DataTemplate>
+				    </ListView.ItemTemplate>
+			  
+  			</ListView>
+
+			
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
