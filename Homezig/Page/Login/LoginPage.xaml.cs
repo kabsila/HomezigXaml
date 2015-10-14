@@ -12,6 +12,7 @@ using WebSocket.Portable.Interfaces;
 
 namespace Homezig
 {
+
 	public partial class LoginPage : ContentPage
 	{		
 		private IProgressDialog loadingDialog;
@@ -81,7 +82,7 @@ namespace Homezig
 						await ws_client.OpenAsync(webSocketUrl.Text);
 
 					} catch (Exception ex) {
-						Debug.WriteLine (ex.Message);
+						Debug.WriteLine (ex.ToString());
 						Debug.WriteLine ("OpenAsync Exception");
 						UserDialogs.Instance.ShowError ("Can not Connect to Websocket Server");
 					}

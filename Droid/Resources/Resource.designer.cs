@@ -26,8 +26,6 @@ namespace Homezig.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::Homezig.Droid.Resource.String.ApplicationName;
-			global::Xamarin.Forms.Platform.Resource.String.Hello = global::Homezig.Droid.Resource.String.Hello;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::Homezig.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::Homezig.Droid.Resource.String.Hello;
 			global::Splat.Resource.String.library_name = global::Homezig.Droid.Resource.String.library_name;
@@ -71,6 +69,10 @@ namespace Homezig.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::Homezig.Droid.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::Homezig.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::Homezig.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::Homezig.Droid.Resource.String.ApplicationName;
+			global::Xamarin.Forms.Platform.Resource.String.Hello = global::Homezig.Droid.Resource.String.Hello;
+			global::Acr.DeviceInfo.Resource.String.ApplicationName = global::Homezig.Droid.Resource.String.ApplicationName;
+			global::Acr.DeviceInfo.Resource.String.Hello = global::Homezig.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -265,28 +267,16 @@ namespace Homezig.Droid
 			public const int ic_errorstatus = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int ic_plusone_medium_off_client = 2130837531;
+			public const int ic_successstatus = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int ic_plusone_small_off_client = 2130837532;
+			public const int icon = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int ic_plusone_standard_off_client = 2130837533;
+			public const int roundedbg = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int ic_plusone_tall_off_client = 2130837534;
-			
-			// aapt resource value: 0x7f02001f
-			public const int ic_successstatus = 2130837535;
-			
-			// aapt resource value: 0x7f020020
-			public const int icon = 2130837536;
-			
-			// aapt resource value: 0x7f020021
-			public const int roundedbg = 2130837537;
-			
-			// aapt resource value: 0x7f020022
-			public const int roundedbgdark = 2130837538;
+			public const int roundedbgdark = 2130837534;
 			
 			static Drawable()
 			{
@@ -373,11 +363,11 @@ namespace Homezig.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040024
-			public const int ApplicationName = 2130968612;
-			
 			// aapt resource value: 0x7f040023
-			public const int Hello = 2130968611;
+			public const int ApplicationName = 2130968611;
+			
+			// aapt resource value: 0x7f040022
+			public const int Hello = 2130968610;
 			
 			// aapt resource value: 0x7f040001
 			public const int auth_google_play_services_client_facebook_display_name = 2130968577;
@@ -481,8 +471,8 @@ namespace Homezig.Droid
 			// aapt resource value: 0x7f04001d
 			public const int common_signin_button_text_long = 2130968605;
 			
-			// aapt resource value: 0x7f040022
-			public const int library_name = 2130968610;
+			// aapt resource value: 0x7f040024
+			public const int library_name = 2130968612;
 			
 			static String()
 			{

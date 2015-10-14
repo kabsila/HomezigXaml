@@ -27,7 +27,7 @@ namespace Homezig.iOS
 
 			LoadApplication (new App ());
 
-
+			//UIApplication.SharedApplication.SetStatusBarStyle (UIStatusBarStyle.LightContent, false);
 
 			return base.FinishedLaunching (app, options);
 		}

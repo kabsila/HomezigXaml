@@ -12,7 +12,14 @@ namespace Homezig
 			InitializeComponent ();
 
 
-			this.Children.Add (new NavigationPage(new DeviceTypeListPage()){Title="Powered", Icon="MenuTapPage/Contact.png"});
+			this.Children.Add (new NavigationPage(new DeviceTypeListPage())
+				{
+					Title = "Powered", 
+					Icon = "MenuTapPage/Contact.png",
+					BarBackgroundColor = Color.FromHex("#03A9F4"),
+					BarTextColor = Color.White
+						
+				});
 			this.Children.Add (new NavigationPage(new Profile_Page()){Title = "Profile", Icon="MenuTapPage/Contact.png"});
 			this.Children.Add (new NavigationPage(new Option_Page()){Title = "Option", Icon="MenuTapPage/Contact.png"});
 			//this.Children.Add (new NavigationPage(new Option_Page(ipm)){Title = "Option"});

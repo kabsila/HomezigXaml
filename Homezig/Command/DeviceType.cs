@@ -26,7 +26,8 @@ namespace Homezig
 			} else if (deviceType.Equals (NodeDeviceType.Camera)) {
 				eString = "Camera";
 			} else if (deviceType.Equals (NodeDeviceType.GeneralPurposeDetector)) {
-				eString = "General Purpose Detector";
+				//eString = "General Purpose Detector";
+				eString = "Gate";
 			} else if (deviceType.Equals (NodeDeviceType.RemoteControl)) {
 				eString = "Remote Control";
 			} else {

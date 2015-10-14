@@ -1,27 +1,82 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			xmlns:local="clr-namespace:Homezig;assembly=Homezig" 
+			xmlns:local="clr-namespace:Homezig;assembly=Homezig"
+			xmlns:arc="clr-namespace:Acr.DeviceInfo;assembly=Acr.DeviceInfo"
 			x:Class="Homezig.DeviceTypeListPage"
-			Title = "Powered">
+			Title = "Powered"
+			BackgroundColor="{StaticResource bgc}">
 
 	<ContentPage.Padding>
 	    <OnPlatform x:TypeArguments="Thickness"
-	                iOS="20, 20, 10, 20"
+	                iOS="20, 20, 20, 20"
 	                Android="20, 0, 10, 20"
 	                WinPhone="20, 0, 10, 20" />
   	</ContentPage.Padding>
 
+  	<ContentPage.Resources>
+	    <ResourceDictionary>     
+	      <local:ScreenConverter x:Key="sConverter" />
+	      <local:ImageConverter x:Key="imgConverter" />
+	      <Color x:Key="bgc">#F5F5F5</Color>
+
+	    </ResourceDictionary>
+  	</ContentPage.Resources>
+
 	<ContentPage.Content>
 
 		<StackLayout VerticalOptions="Center">
-
-			<ListView x:Name="typeListView" >
-			    <ListView.ItemTemplate>
+			<!--<Label Text="{Binding ScreenHeight}" BindingContext="{x:Static arc:DeviceInfo.Hardware}"/>-->
+			<ListView x:Name="typeListView" 
+						HasUnevenRows="true" 
+						SeparatorVisibility="None" 
+						BackgroundColor="{StaticResource bgc}" >
+			    <!--<ListView.ItemTemplate>
 			      <DataTemplate>
 			        <TextCell Text="{Binding node_deviceType}" />
 			      </DataTemplate>
 			    </ListView.ItemTemplate>
+			    HeightRequest="{Binding kk, Converter={StaticResource sConverter}, ConverterParameter=3}" -->
+			     <ListView.ItemTemplate>
+				      <DataTemplate>
+				        <ViewCell>
+				        <Frame 
+				        		HeightRequest="{Binding Source={x:Static arc:DeviceInfo.Hardware}, Path=ScreenHeight, Converter={StaticResource sConverter}, ConverterParameter=7}" 
+				        		Padding="0, 2, 0, 2" 
+				        		HasShadow="false" 
+				        		VerticalOptions="Center"
+				        		BackgroundColor="{StaticResource bgc}">	
+				        	<Frame.Content>		        	
+					        	<Frame  HasShadow="false" 
+					        			Padding="10, 20, 20, 20"
+					        			BackgroundColor="#2196F3"
+					        			>
+					        		<Frame.Content>
+					        		 	<StackLayout  Padding="0, 0, 0, 0" Orientation="Horizontal" VerticalOptions="Center">
+					        		 		<Image Source="{Binding node_deviceType, Converter={StaticResource imgConverter}}" 
+					        		 				HorizontalOptions="StartAndExpand"
+					        		 				Aspect="AspectFit" />
+	                            			<Label Text="{Binding node_deviceType}"	TextColor="White" VerticalOptions="Center"/>	                            				
+	                            			<Image Source="Listview/arrow_right_white.png" HorizontalOptions="EndAndExpand"/>                           		
+		                        		</StackLayout>
+					        		</Frame.Content>
+					        		
+					        	</Frame>
+				        	</Frame.Content>
+				        </Frame>
+
+                        	<!--<StackLayout Padding="25, 0, 20, 0" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                            	<Label Text="{Binding io_name_by_user}" 
+                            			HorizontalOptions="StartAndExpand" 
+                            			VerticalOptions="CenterAndExpand"/>
+                            	<Switch IsToggled="{Binding io_value}" VerticalOptions="CenterAndExpand"/>
+	                        </StackLayout>-->
+
+                    	</ViewCell>
+				      </DataTemplate>
+				    </ListView.ItemTemplate>
+
+				   
   			</ListView>
 
 			

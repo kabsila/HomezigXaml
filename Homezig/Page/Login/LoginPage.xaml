@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-				xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+				xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+				xmlns:local="clr-namespace:Homezig;assembly=Homezig" 
 				x:Class="Homezig.LoginPage"
 				Title="Login Page"
-             	
+             	BackgroundColor="#2196F3"
              	>
 	<ContentPage.Padding>
 	    <OnPlatform x:TypeArguments="Thickness"
@@ -12,37 +13,132 @@
 	                WinPhone="10, 0, 10, 20" />
   	</ContentPage.Padding>
 
+  	<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LoginButtonStyle" TargetType="Button">                
+                <Setter Property="BorderRadius" Value="20"/>
+                <Setter Property="HeightRequest" Value="42"/>
+                <Setter Property="BackgroundColor" Value="#2ecc71"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
 
-	<StackLayout VerticalOptions="Center">
+            <Style x:Key="LogoutButtonStyle" TargetType="Button">               
+                <Setter Property="BorderRadius" Value="20"/>
+                <Setter Property="HeightRequest" Value="42"/>
 
-		<Button Text="test chart" Clicked="OnChart" />
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-		<Label Text="Server Url"
-				FontSize="Medium"/>
+	<StackLayout VerticalOptions="Center" Spacing="20">
+
+		<!--<Button Text="test chart" Clicked="OnChart" />-->
+
+		<!--<Label Text="Server Url"
+				FontSize="Large"
+				TextColor="White"/>-->
+		<Image Source="Test_Logo.png" 
+				Aspect="AspectFit" 
+				WidthRequest="50" 
+				HeightRequest="50"
+				VerticalOptions="Start"/>
 
 		<Entry x:Name="webSocketUrl"
-				Placeholder="Example: ws://echo.websocket.org"
-				Text="ws://hz.homezig.net"/>
+				Placeholder="Example: ws://echo.websocket.org ws://hz.homezig.net"
+				Text="ws://echo.websocket.org"
+				HeightRequest="40"
 
-		<Label Text="Username"
-				FontSize="Medium"/>
-
-		<Entry x:Name="username" Text="admin"				
 				/>
 
-		<Label Text="Password"
-				FontSize="Medium"/>
+		<!--<Label Text="Username"
+				FontSize="Large"
+				TextColor="White"/>-->
+		
+		<Entry x:Name="username" 
+				Text="admin"
+				Placeholder="Username"
+				HeightRequest="40"
+								
+				/>
+
+		<!--<Label Text="Password"
+				FontSize="Large"
+				TextColor="White"/>-->
 
 		<Entry x:Name="password"				
-				IsPassword="true" Text="b9cb39"/>
+				IsPassword="true" 
+				Text="b9cb39"
+				HeightRequest="40"
+				Placeholder="Password"
+				/>
 
-		<Button Text="Login"
-				BorderWidth="1"
+
+		<!--<StackLayout VerticalOptions="Center" 
+						HorizontalOptions="Center" 
+
+						BackgroundColor="#2196F3" 
+						Orientation="Horizontal">
+
+      		<Image Source="Icon-60.png" 
+      				WidthRequest="25" 
+      				HorizontalOptions="Center" 
+      				VerticalOptions="Center"/>
+      		<Entry x:Name="password" Text="" 
+      				TextColor="Black" 
+      				Placeholder=" Username" 
+      				HorizontalOptions="StartAndExpand" 
+      				HeightRequest="35" />
+
+    	</StackLayout>
+
+		<StackLayout VerticalOptions="Center" 
+						HorizontalOptions="Center" 
+
+						BackgroundColor="#2196F3" 
+						Orientation="Horizontal">
+
+      		<Image Source="Icon-60.png" 
+      				WidthRequest="25" 
+      				HorizontalOptions="Center" 
+      				VerticalOptions="Center"/>
+      		<Entry x:Name="webSocketUrl" Text="" 
+      				TextColor="Black" 
+      				Placeholder=" Username" 
+      				HorizontalOptions="StartAndExpand" 
+      				HeightRequest="35" />
+
+    	</StackLayout>
+
+		<StackLayout VerticalOptions="Center" 
+						HorizontalOptions="Center" 
+
+						BackgroundColor="#2196F3" 
+						Orientation="Horizontal">
+
+      		<Image Source="Icon-60.png" 
+      				WidthRequest="25" 
+      				HorizontalOptions="Center" 
+      				VerticalOptions="Center"/>
+      		<Entry x:Name="username" IsPassword="true" 
+      				Text="" TextColor="Black" 
+      				Placeholder=" Password" 
+      				HorizontalOptions="StartAndExpand" 
+      				HeightRequest="35" />
+
+    	</StackLayout>-->
+
+		<Button Text="Login"				
+				Style="{StaticResource LoginButtonStyle}"
 				Clicked="OnLogin_Clicked"/>
 
-		<Button Text="Logout"
-				BorderWidth="1"
+		<Button Text="Logout"				
+				Style="{StaticResource LogoutButtonStyle}"
 				Clicked="OnLogout_Clicked"/>
+
+
+		
+
 	</StackLayout>
 
 </ContentPage>

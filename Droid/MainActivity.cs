@@ -9,7 +9,8 @@ using Android.Widget;
 using Android.OS;
 using Acr.UserDialogs;
 
-
+using Connectivity.Plugin.Abstractions;
+using Connectivity.Plugin;
 
 namespace Homezig.Droid
 {
